@@ -1,0 +1,991 @@
+<ui version="4.0" >
+ <class>DlgLearnStatistic</class>
+ <widget class="QDialog" name="DlgLearnStatistic" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>502</width>
+    <height>552</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Lernstatistik</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="labChapter" >
+     <property name="font" >
+      <font>
+       <family>MS Shell Dlg 2</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Kapitel-Name</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab" >
+      <attribute name="title" >
+       <string>Aktueller Status</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_15" >
+         <property name="font" >
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Lernfortschritt</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="7" column="0" >
+          <widget class="QLabel" name="label_4" >
+           <property name="text" >
+            <string>Durchschnittlicher Lernfortschritt:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="3" >
+          <widget class="QLabel" name="labChapterRareBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3" >
+          <widget class="QLabel" name="labChapterCountBar" >
+           <property name="text" >
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2" >
+          <widget class="QLabel" name="labChapterVeryRare" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_11" >
+           <property name="text" >
+            <string>Anfänger:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2" >
+          <widget class="QLabel" name="labChapterRare" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2" >
+          <widget class="QLabel" name="labChapterAvgText" >
+           <property name="toolTip" >
+            <string>0.0 = Ahnungslos&lt;br>1.0 = Anfänger&lt;br>2.0 = Fortgeschritten&lt;br>3.0 = Experte&lt;br>4.0 = Freak&lt;br>5.0 = Professor</string>
+           </property>
+           <property name="text" >
+            <string>0.0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" >
+          <widget class="QLabel" name="label_14" >
+           <property name="text" >
+            <string>Freak:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3" >
+          <widget class="QLabel" name="labChapterNormalBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="QLabel" name="labChapterCount" >
+           <property name="toolTip" >
+            <string>Gesamt-Anzahl der Fragen dieses Kapitels</string>
+           </property>
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2" >
+          <widget class="QLabel" name="labChapterExtremeRare" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_12" >
+           <property name="text" >
+            <string>Fortgeschritten:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="QLabel" name="labChapterOften" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" >
+          <widget class="QLabel" name="labChapterVeryOften" >
+           <property name="minimumSize" >
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1" >
+          <widget class="QLabel" name="label_9" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level3.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="label_6" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level0.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label" >
+           <property name="text" >
+            <string>Anzahl der Fragen:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2" >
+          <widget class="QLabel" name="labChapterNormal" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="3" >
+          <widget class="QLabel" name="labChapterExtremeRareBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" >
+          <widget class="QLabel" name="label_13" >
+           <property name="text" >
+            <string>Experte:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" >
+          <widget class="QLabel" name="label_3" >
+           <property name="text" >
+            <string>Professor:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QLabel" name="label_8" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level2.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1" >
+          <widget class="QLabel" name="labChapterAvgIcon" >
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level0.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1" >
+          <widget class="QLabel" name="label_19" >
+           <property name="toolTip" >
+            <string>Smiley mit Doktorhut</string>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level5.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1" >
+          <widget class="QLabel" name="label_10" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level4.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3" >
+          <widget class="QLabel" name="labChapterVeryOftenBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_5" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>3</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string>Ahnungslos:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3" >
+          <widget class="QLabel" name="labChapterOftenBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3" >
+          <widget class="QLabel" name="labChapterVeryRareBar" >
+           <property name="text" >
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="QLabel" name="label_7" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="pixmap" >
+            <pixmap resource="afutrainer.qrc" >:/icons/16x16/level1.png</pixmap>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_16" >
+         <property name="font" >
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Abfragen</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="2" column="1" >
+          <widget class="QLabel" name="labClickCorrect" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="QLabel" name="labClickCorrectP" >
+           <property name="text" >
+            <string>0.0 %</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_20" >
+           <property name="text" >
+            <string>davon falsche Antworten:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_18" >
+           <property name="text" >
+            <string>davon richtige Antworten:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QLabel" name="labClickWrong" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_17" >
+           <property name="text" >
+            <string>Abfragen gesamt:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="labClickCount" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2" >
+          <widget class="QLabel" name="labClickWrongP" >
+           <property name="text" >
+            <string>0.0 %</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="label_28" >
+           <property name="font" >
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Anzahl </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="QLabel" name="label_29" >
+           <property name="font" >
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Anteil </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_2" >
+         <property name="orientation" >
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_24" >
+         <property name="font" >
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text" >
+          <string>Zeitaufwand</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="3" column="2" >
+          <widget class="QLabel" name="labTimeExpeditureWrongP" >
+           <property name="text" >
+            <string>0.0 %</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2" >
+          <widget class="QLabel" name="labTimeExpeditureCorrectP" >
+           <property name="text" >
+            <string>0.0 %</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0" >
+          <widget class="QLabel" name="label_22" >
+           <property name="text" >
+            <string>davon für richtige Antworten:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="3" >
+          <widget class="QLabel" name="labTimePerQuestionCorrect" >
+           <property name="text" >
+            <string>0 m 0 s</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="3" >
+          <widget class="QLabel" name="labTimePerQuestionWrong" >
+           <property name="text" >
+            <string>0 m 0 s</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" >
+          <widget class="QLabel" name="label_21" >
+           <property name="text" >
+            <string>Zeitaufwand gesamt:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" >
+          <widget class="QLabel" name="labTimeExpediture" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1" >
+          <widget class="QLabel" name="labTimeExpeditureWrong" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" >
+          <widget class="QLabel" name="label_23" >
+           <property name="text" >
+            <string>davon für falsche Antworten:</string>
+           </property>
+           <property name="indent" >
+            <number>20</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1" >
+          <widget class="QLabel" name="labTimeExpeditureCorrect" >
+           <property name="text" >
+            <string>0</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" >
+          <widget class="QLabel" name="label_25" >
+           <property name="font" >
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Dauer </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" >
+          <widget class="QLabel" name="label_26" >
+           <property name="font" >
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Anteil </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3" >
+          <widget class="QLabel" name="label_27" >
+           <property name="font" >
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text" >
+            <string>Ø pro Frage </string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3" >
+          <widget class="QLabel" name="labTimePerQuestion" >
+           <property name="text" >
+            <string>0 m 0 s</string>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2" >
+      <attribute name="title" >
+       <string>Zeitlicher Verlauf</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_2" >
+           <property name="text" >
+            <string>Zeitraum:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbPeriod" >
+           <property name="minimumSize" >
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupLevel" >
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="title" >
+          <string>Lernfortschritt</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupClicked" >
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="title" >
+          <string>Abfragen</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3" >
+      <attribute name="title" >
+       <string>Zeitaufwand</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_30" >
+           <property name="text" >
+            <string>Zeitraum:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbPeriod2" >
+           <property name="minimumSize" >
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupTimeExpediture" >
+         <property name="minimumSize" >
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="title" >
+          <string>Zeitaufwand [min]</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>cbPeriod</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>DlgLearnStatistic</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DlgLearnStatistic</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

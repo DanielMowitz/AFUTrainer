@@ -1,0 +1,112 @@
+<ui version="4.0" >
+ <class>DlgLearnAssistant</class>
+ <widget class="QDialog" name="DlgLearnAssistant" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>493</width>
+    <height>422</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Lern-Assistent</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="afutrainer.qrc" >:/icons/16x16/idea_info.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>Vorschläge des Lern-Assistents</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QRadioButton" name="rbRepeat" >
+        <property name="text" >
+         <string>Alle heute zu wiederholenden Fragen lernen</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labRepeat" >
+        <property name="text" >
+         <string>TextLabel</string>
+        </property>
+        <property name="indent" >
+         <number>20</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbList" >
+        <property name="text" >
+         <string>Kapitel aus folgender Liste lernen</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTreeView" name="tvChapters" >
+        <property name="rootIsDecorated" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>rbRepeat</tabstop>
+  <tabstop>rbList</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources>
+  <include location="afutrainer.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DlgLearnAssistant</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>293</x>
+     <y>397</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>416</x>
+     <y>418</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

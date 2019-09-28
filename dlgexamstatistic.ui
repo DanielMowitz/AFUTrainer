@@ -1,0 +1,367 @@
+<ui version="4.0" >
+ <class>DlgExamStatistic</class>
+ <widget class="QDialog" name="DlgExamStatistic" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>452</width>
+    <height>433</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Prüfungs-Statistik</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label" >
+       <property name="text" >
+        <string>Prüfung:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cbExam" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>3</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_11" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Prüfungs-Rahmenbedinungen</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item row="2" column="1" >
+      <widget class="QLabel" name="labExamWrong" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QLabel" name="labExamQCount" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="label_13" >
+       <property name="text" >
+        <string>Verfügbare Zeit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="label_14" >
+       <property name="text" >
+        <string>Max. erlaubte Anzahl falscher Fragen:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" >
+      <widget class="QLabel" name="label_12" >
+       <property name="text" >
+        <string>Anzahl der Fragen:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QLabel" name="labExamTime" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_18" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Statistik</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item row="3" column="1" >
+      <widget class="QLabel" name="labAvgWrong" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="QLabel" name="labExamPassed" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="QLabel" name="labExamFailed" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="label_4" >
+       <property name="text" >
+        <string>davon bestanden:</string>
+       </property>
+       <property name="indent" >
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" >
+      <widget class="QLabel" name="label_10" >
+       <property name="text" >
+        <string>Durchschn. Anzahl falscher Fragen:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="label_7" >
+       <property name="text" >
+        <string>davon nicht bestanden:</string>
+       </property>
+       <property name="indent" >
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="QLabel" name="labExamCount" >
+       <property name="text" >
+        <string>0</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2" >
+      <widget class="QLabel" name="labExamPassedP" >
+       <property name="text" >
+        <string>0.0 %</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2" >
+      <widget class="QLabel" name="labExamFailedP" >
+       <property name="text" >
+        <string>0.0 %</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" >
+      <widget class="QLabel" name="label_2" >
+       <property name="text" >
+        <string>Anzahl Prüfungen durchgeführt:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" >
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string>Durchschn. benötigte Zeit pro Prüfung / pro Frage:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" >
+      <widget class="QLabel" name="labTimeExam" >
+       <property name="text" >
+        <string>0 m 0 s</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2" >
+      <widget class="QLabel" name="labTimeQuestion" >
+       <property name="text" >
+        <string>0 m 0 s</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_2" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_19" >
+     <property name="font" >
+      <font>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text" >
+      <string>Liste durchgeführter Prüfungen</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTreeWidget" name="twExamStat" >
+     <property name="rootIsDecorated" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>cbExam</tabstop>
+  <tabstop>twExamStat</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>DlgExamStatistic</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>DlgExamStatistic</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

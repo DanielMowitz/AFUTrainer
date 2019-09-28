@@ -1,0 +1,397 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>AFUTrainer 3.0</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="afutrainer.qrc" >:/icons/32x32/idea.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" />
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_Hilfe" >
+    <property name="title" >
+     <string>&amp;Hilfe</string>
+    </property>
+    <addaction name="actHelpWhatsThis" />
+    <addaction name="separator" />
+    <addaction name="actHelpAbout" />
+    <addaction name="actHelpAboutQt" />
+   </widget>
+   <widget class="QMenu" name="menu_Ansicht" >
+    <property name="title" >
+     <string>&amp;Ansicht</string>
+    </property>
+    <addaction name="actViewToolbar" />
+    <addaction name="actViewStatusbar" />
+   </widget>
+   <widget class="QMenu" name="menu_Fragen" >
+    <property name="title" >
+     <string>&amp;Fragen</string>
+    </property>
+    <addaction name="actQuestionsLearn" />
+    <addaction name="actQuestionAssistant" />
+    <addaction name="actQuestionsLearnStatistics" />
+    <addaction name="separator" />
+    <addaction name="actQuestionsTest" />
+    <addaction name="actQuestionsTestStatistics" />
+   </widget>
+   <widget class="QMenu" name="menuFile" >
+    <property name="title" >
+     <string>&amp;Datei</string>
+    </property>
+    <addaction name="actFileNew" />
+    <addaction name="actFileOpen" />
+    <addaction name="actFileInformation" />
+    <addaction name="separator" />
+    <addaction name="actFileSave" />
+    <addaction name="actFileSaveAs" />
+    <addaction name="actFileImport" />
+    <addaction name="actFileImportUS" />
+    <addaction name="actFileExit" />
+   </widget>
+   <addaction name="menuFile" />
+   <addaction name="menu_Fragen" />
+   <addaction name="menu_Ansicht" />
+   <addaction name="menu_Hilfe" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QToolBar" name="toolBar" >
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
+   <addaction name="actFileOpen" />
+   <addaction name="actFileInformation" />
+   <addaction name="actFileExit" />
+   <addaction name="separator" />
+   <addaction name="actQuestionsLearn" />
+   <addaction name="actQuestionAssistant" />
+   <addaction name="actQuestionsLearnStatistics" />
+   <addaction name="actQuestionsTest" />
+   <addaction name="separator" />
+   <addaction name="actHelpWhatsThis" />
+  </widget>
+  <action name="actFileOpen" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/fileopen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Ö&amp;ffnen</string>
+   </property>
+   <property name="toolTip" >
+    <string>Öffnet einen Fragenkatalog</string>
+   </property>
+   <property name="statusTip" >
+    <string>Öffnet einen Fragenkatalog</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Datei öffnen&lt;/b>&lt;p>Öffnet einen existierenden Fragenkatalog</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actFileExit" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/exit.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Beenden</string>
+   </property>
+   <property name="toolTip" >
+    <string>Beendet den AFUTrainer</string>
+   </property>
+   <property name="statusTip" >
+    <string>Beendet den AFUTrainer</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Beenden&lt;/b>&lt;p>Beendet den AFUTrainer</string>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+F4</string>
+   </property>
+  </action>
+  <action name="actViewToolbar" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>&amp;Werkzeugleiste</string>
+   </property>
+   <property name="toolTip" >
+    <string>Aktiviert/deaktiviert die Werkzeugleiste</string>
+   </property>
+   <property name="statusTip" >
+    <string>Aktiviert/deaktiviert die Werkzeugleiste</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Werkzeugleiste&lt;/b>&lt;p>Aktiviert/deaktiviert die Werkzeugleiste</string>
+   </property>
+  </action>
+  <action name="actViewStatusbar" >
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="checked" >
+    <bool>true</bool>
+   </property>
+   <property name="text" >
+    <string>&amp;Statusleiste</string>
+   </property>
+   <property name="toolTip" >
+    <string>Aktiviert/deaktiviert die Statusleiste</string>
+   </property>
+   <property name="statusTip" >
+    <string>Aktiviert/deaktiviert die Statusleiste</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Statusleiste&lt;/b>&lt;p>Aktiviert/deaktiviert die Statusleiste</string>
+   </property>
+  </action>
+  <action name="actHelpAbout" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/idea.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Über...</string>
+   </property>
+   <property name="iconText" >
+    <string>Über</string>
+   </property>
+   <property name="toolTip" >
+    <string>Über den AFUTrainer</string>
+   </property>
+   <property name="statusTip" >
+    <string>Über den AFUTrainer</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Über&lt;/b>&lt;p>Copyright-Hinweise und Autoren</string>
+   </property>
+  </action>
+  <action name="actHelpWhatsThis" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/contexthelp.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Was ist &amp;das?</string>
+   </property>
+   <property name="statusTip" >
+    <string>Was ist das?</string>
+   </property>
+   <property name="shortcut" >
+    <string>Shift+F1</string>
+   </property>
+  </action>
+  <action name="actQuestionsView" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/viewmag.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Ansehen...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zeigt ausgewählte Frage an</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zeigt ausgewählte Frage an</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Frage ansehen&lt;/b>&lt;p>Zeigt die Frage mit Anworten und Statistik&lt;br>in einem neuen Fenster an</string>
+   </property>
+   <property name="shortcut" >
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actQuestionsLearn" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/idea.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Lernen...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Fragen lernen</string>
+   </property>
+   <property name="statusTip" >
+    <string>Fragen lernen</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Fragen lernen&lt;/b>&lt;p>Hier können Sie die Fragen lernen. Eine Frage wird so lange abgefragt, bis Sie sie richtig beantworten können.</string>
+   </property>
+   <property name="shortcut" >
+    <string>F4</string>
+   </property>
+  </action>
+  <action name="actQuestionsLearnStatistics" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/stats.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Lernstatistik...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zeigt Lernstatistik des ausgewählten Kapitels an</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zeigt Lernstatistik des ausgewählten Kapitels an</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Lernstatistik&lt;/b>&lt;p>Zeigt Lernstatistik des ausgewählten Kapitels an</string>
+   </property>
+  </action>
+  <action name="actQuestionsTest" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/clock.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Prüfungssimulation...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Simuliert die Prüfung</string>
+   </property>
+   <property name="statusTip" >
+    <string>Simuliert die Prüfung</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Prüfungssimulation&lt;/b>&lt;p>Sie erhalten zufällig generierte Fragenbögen,&lt;br>die Sie in vorgegebener Zeit lösen müssen!</string>
+   </property>
+   <property name="shortcut" >
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="actQuestionsTestStatistics" >
+   <property name="text" >
+    <string>&amp;Prüfstatistik...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zeigt Ergebnisse der Prüfungssimulationen an</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zeigt Ergebnisse der Prüfungssimulationen an</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Prüfstatistik&lt;/b>&lt;p>Sie erhalten eine detaillierte Auflistung&lt;br>der Ergebnisse der Prüfungssimulationen.</string>
+   </property>
+  </action>
+  <action name="actHelpAboutQt" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/32x32/qt.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Über &amp;Qt...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Über die Qt-Bibliothek</string>
+   </property>
+   <property name="statusTip" >
+    <string>Über die Qt-Bibliothek</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Über Qt&lt;/b>&lt;p>Zeigt Copyright-Hinweise zur verwendeten Qt-Bibliothek an</string>
+   </property>
+  </action>
+  <action name="actFileImport" >
+   <property name="text" >
+    <string>&amp;Import DE...</string>
+   </property>
+   <property name="iconText" >
+    <string>Import DE</string>
+   </property>
+   <property name="toolTip" >
+    <string>Import DE</string>
+   </property>
+  </action>
+  <action name="actFileNew" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/filenew.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Neu</string>
+   </property>
+  </action>
+  <action name="actFileSave" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/filesave.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Speichern</string>
+   </property>
+  </action>
+  <action name="actFileSaveAs" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/filesaveas.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Speichern &amp;unter...</string>
+   </property>
+  </action>
+  <action name="actQuestionAssistant" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/idea_info.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Lern-Assistent...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Ruft den Lern-Assistenten auf</string>
+   </property>
+   <property name="statusTip" >
+    <string>Ruft den Lern-Assistenten auf</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Lern-Assistent&lt;/b>&lt;p>Der Lern-Assistent hilft Ihnen beim Auswahl der zu lerndenden Fragen.</string>
+   </property>
+   <property name="shortcut" >
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actFileImportUS" >
+   <property name="text" >
+    <string>Import US...</string>
+   </property>
+  </action>
+  <action name="actFileInformation" >
+   <property name="icon" >
+    <iconset resource="afutrainer.qrc" >:/icons/16x16/info.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Information...</string>
+   </property>
+   <property name="toolTip" >
+    <string>Informationen zum Fragenkatalog</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zeigt Informationen zum Fragenkatalog an.</string>
+   </property>
+   <property name="whatsThis" >
+    <string>&lt;b>Information&lt;/b>&lt;p>Zeigt Informationen, wie z.B. Gültigkeitseitraum, Herausgeber, Version,... zum aktuell geladenen Fragenkatalog an.</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="afutrainer.qrc" />
+ </resources>
+ <connections/>
+</ui>

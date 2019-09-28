@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+ *   Copyright (C) 2003-2007 by Oliver Saal                                *
+ *   osaal@gmx.de                                                          *
+ *   http://www.oliver-saal.de/software/afutrainer/                        *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+                                                                      
+Hinweis: Wenn HTML in Tags erlaubt ist, wird darauf explizit hingewiesen. 
+HTML wird dann entweder in CDATA-Blöcke (wie <![CDATA[ <b>fette Schrift</b> ]]>) gepackt 
+oder mit &lt; codiert (<answertext correct="true">42*10&lt;sup>-3&lt;/sup> A.</answertext>).
+-->
+
+<!ELEMENT afutrainer (title,publisher,version,valid,contact,comment?,options?,exam*,hint*,chapter+)>
+<!-- Version des AFUTrainer-Formats - hier: 3.0 -->
+<!ATTLIST afutrainer version (3.0) #REQUIRED>
+<!-- Datum, an dem diese XML-Datei erstellt wurde. -->
+<!ATTLIST afutrainer created CDATA #REQUIRED>
+
+<!-- Titel (ausführlich/lang) des Fragenkatalogs -->
+<!ELEMENT title (#PCDATA)>
+<!-- Kurzbezeichnung des Fragenkatalogs -->
+<!ATTLIST title short CDATA #IMPLIED>
+<!-- unique wird benötigt, um Lernstatistiken unabh. vom Dateinamen 
+und eindeutig auf dem System abzuspeichern -->
+<!ATTLIST title unique CDATA #REQUIRED>
+
+<!-- Angaben zum Original-Fragenkatalog, Urheber: (Codiertes HTML erlaubt, s.o.)-->
+<!ELEMENT publisher (#PCDATA)>
+
+<!-- Version/Auflage des Original-Fragenkataloges (Codiertes HTML erlaubt, s.o.)-->
+<!ELEMENT version (#PCDATA)>
+<!-- Original-Versions-Datum -->
+<!ATTLIST version published CDATA #REQUIRED>
+
+<!-- Gültigkeitszeitraum des Katalogs -->
+<!ELEMENT valid EMPTY>
+<!ATTLIST valid from CDATA #REQUIRED>
+<!ATTLIST valid until CDATA #IMPLIED>
+
+<!-- Ansprechparter für den XML-Fragenkatalog (z.B. bei Fehlern): (Codiertes HTML erlaubt, s.o.)-->
+<!ELEMENT contact (#PCDATA)>
+
+<!-- Kommentar zum Fragenkatalog (Codiertes HTML erlaubt, s.o.)-->
+<!ELEMENT comment (#PCDATA)>
+
+<!-- Diverse Optionen -->
+<!ELEMENT options EMPTY>
+<!-- Wird die Reihenfolge der Antworten beim Abfragen immer durchgetauscht? Default: Ja -->
+<!ATTLIST options mixanswers (true|false) "true">
+
+<!-- Definition einer Prüfung -->
+<!ELEMENT exam (exam_part+)>
+<!-- Eindeutige Kennung (für Prüfungsstatistiken) -->
+<!ATTLIST exam id CDATA #REQUIRED>
+<!-- Name/Bezeichnung der Prüfung -->
+<!ATTLIST exam name CDATA #REQUIRED>
+<!-- Dauer der Prüfung in Minuten, 0 für unbegrenzt -->
+<!ATTLIST exam duration CDATA #REQUIRED>
+<!-- Max. erlaubte Anzahl von Fehlerpunkten zum Bestehen der Prüfung -->
+<!ATTLIST exam maxerrorpoints CDATA #REQUIRED>
+
+<!-- Teil einer Prüfung 
+Enthält regulären Ausdruck nach den Regeln von http://doc.trolltech.com/4.2/qregexp.html#details 
+Es werden für die Prüfungszusammenstellung 'count' Fragen ausgewählt, 
+deren 'id' diesem regulären Ausdruck entsprechen.
+Bsp: <exam_part count="5">TA\d\d\d</exam_part> 
+=> Es sind 5 Fragen in der Prüfung, die mit TA beginnen und anschließend 3 Ziffern haben
+-->
+<!ELEMENT exam_part (#PCDATA)>
+<!ATTLIST exam_part count CDATA #REQUIRED>
+
+<!-- Hilfetexte/Bemerkungen zu einzelnen Fragen (Codiertes HTML erlaubt, s.o.)
+Es ist möglich, ein Hilfetext mehreren Fragen zuzuordnen und auch einer Frage mehrere Texte zuzuordnen 
+-->
+<!ELEMENT hint (#PCDATA)>
+<!-- Zugeordnete Fragen, durch Leerzeichen und/oder Komma und/oder Semikolon getrennt-->
+<!ATTLIST hint question CDATA #REQUIRED>
+<!-- Autor des Hilfetextes -->
+<!ATTLIST hint author CDATA #IMPLIED>
+<!-- Datum -->
+<!ATTLIST hint date CDATA #IMPLIED>
+
+<!-- Kapitel eines Fragenkatalogs -->
+<!ELEMENT chapter (chapter*, question*)>
+<!-- Bezeichnung/Name des Kapitels -->
+<!ATTLIST chapter name CDATA #REQUIRED>
+<!-- Eindeutige ID des Kapitels -->
+<!ATTLIST chapter id CDATA #REQUIRED>
+
+<!-- Frage -->
+<!ELEMENT question (textquestion, textanswer+, comment?)>
+<!-- Eindeutige Kennung der Frage -->
+<!ATTLIST question id CDATA #REQUIRED>
+<!-- Letze Änderung der Frage -->
+<!ATTLIST question changed CDATA #IMPLIED>
+<!-- Fehlerpunkte beim falsch beantworten, Default: 1 -->
+<!ATTLIST question errorpoints CDATA "1">
+<!-- Ist die Frage aktiv bzw. prüfungsrelevant? Default: true -->
+<!ATTLIST question active (true|false) "true">
+
+<!-- Fragentext (Codiertes HTML erlaubt, s.o.) -->
+<!ELEMENT textquestion (#PCDATA)>
+
+<!-- Antwort auf eine Frage (Codiertes HTML erlaubt, s.o.) -->
+<!ELEMENT textanswer (#PCDATA)>
+<!-- Ist diese Anwort richtig oder falsch? (Default: false = falsch)-->
+<!ATTLIST textanswer correct (true|false) "false">

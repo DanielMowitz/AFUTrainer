@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>icons/16x16/book1.png</file>
+        <file>icons/16x16/button_ok.png</file>
+        <file>icons/16x16/button_cancel.png</file>
+        <file>icons/16x16/cancel.png</file>
+        <file>icons/16x16/clock.png</file>
+        <file>icons/16x16/contexthelp.png</file>
+        <file>icons/16x16/exit.png</file>
+        <file>icons/16x16/filenew.png</file>
+        <file>icons/16x16/fileopen.png</file>
+        <file>icons/16x16/filesave.png</file>
+        <file>icons/16x16/filesaveas.png</file>
+        <file>icons/16x16/finish.png</file>
+        <file>icons/16x16/folder.png</file>
+        <file>icons/16x16/idea.png</file>
+        <file>icons/16x16/idea_gray.png</file>
+        <file>icons/16x16/idea_info.png</file>
+        <file>icons/16x16/info.png</file>
+        <file>icons/16x16/level0.png</file>
+        <file>icons/16x16/level1.png</file>
+        <file>icons/16x16/level2.png</file>
+        <file>icons/16x16/level3.png</file>
+        <file>icons/16x16/level4.png</file>
+        <file>icons/16x16/level5.png</file>
+        <file>icons/16x16/next.png</file>        
+        <file>icons/16x16/previous.png</file>
+        <file>icons/16x16/start.png</file>
+        <file>icons/16x16/stats.png</file>
+        <file>icons/16x16/stop.png</file>
+        <file>icons/16x16/viewmag.png</file>
+        <file>icons/32x32/idea.png</file>
+        <file>icons/32x32/qt.png</file>
+        <file>translations/qt_de.qm</file>
+    </qresource>
+</RCC> 

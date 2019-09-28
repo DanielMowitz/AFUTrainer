@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+      AQDF (Amateur Radio Questionary Data Format) XML
+      by Oliver Saal, Junghard Bippes and Dominik Dresel (c) 2007
+      License: GPL v2 or later
+-->
+<!DOCTYPE aqdf SYSTEM "http://www.oliver-saal.de/software/afutrainer/download/aqdf10.dtd">
+
+
+<aqdf version="1" name="DL Technik Klasse E (ab 02/2007)" created="2007-03-27" >
+
+  <!-- Wird benötigt um die Lernstatistiken eindeutig abzuspeichern -
+  falls sich der Dateiname (z.B. wegen neuer Fragenkatalog-Auflage) ändern
+  sollte: -->
+  <unique_name>DL-E-2006</unique_name>
+  
+  <!-- Titel des Fragenkataloges -->
+  <title>Prüfungsfragen im Prüfungsteil Technische Kenntnisse bei Prüfungen zum Erwerb von Amateurfunkzeugnissen der Klasse E</title>
+  
+  <!-- Angaben zum Original-Fragenkatalog, Urheber: -->
+  <author>Bundesnetzagentur&lt;br>Referat 225&lt;br>Canisiusstraße 21&lt;br>55122 Mainz&lt;br>E-Mail: Poststelle@BNetzA.de&lt;br>Fax: 06131 - 18 5644</author>
+  
+  <!-- Version des Fragenkataloges -->
+  <version published="2006-09-01">1. Auflage, September 2006</version>
+  
+  <!-- Gültigkeitsdauer -->
+  <valid from="2007-02-01" to="" />
+  
+  <!-- Wer ist Ansprechparter für den XML-Fragenkatalog (z.B. bei Fehlern): -->
+  <contact>Oliver Saal, DM1OLI&lt;br>http://www.oliver-saal.de/software/afutrainer/&lt;br>Mail:osaal@gmx.de</contact>
+  
+  <!-- Kommentar: (z.B: Frage xyz korrigiert...) -->
+  <comment></comment>
+  
+  <!-- Diverse Optionen -->
+  <options mixanswers="1" />
+  
+  <!-- Fragenauswahl pro Kapitel -->
+  <exam id="T" name="Technische Kenntnisse Klasse E" duration="60" maxerrorpoints="9">
+    <exam_part count="1">TA\d\d\d</exam_part>
+    <...>
+  </exam>
+
+  <!-- Bemerkungen zu den Fragen -->
+  <hint question="TB103, TB104" author="Oliver Saal (DM1OLI) osaal@gmx.de" date="2004-03-25">Bronze und Messing sind Metalle und damit Leiter. Desweiteren leitet Konstantan und Graphitstaub ebenfalls den elektrischen Strom.</hint>
+
+
+  <hint question="B..." author="Fragenkatalog Bundesnetzagentur">
+    <![CDATA[
+      <table>
+      	<tr><th>Zu übermittelnder<br>Buchstabe</th><th>Schlüsselwort</th><th>Aussprache des<br>Schlüsselworts</th></tr>
+    	<tr><td>A</td><td>Alfa</td><td><u>AL</u> FAH</td></tr>
+    	<tr><td>Z</td><td>Zoulou</td><td><u>SUH</u> LUH</td></tr>
+      </table>
+    Die zu betonenden Silben sind <u>unterstrichen</u>.
+    ]]>
+  </hint>
+
+  <chapter name="Prüfungsfragen im Prüfungsteil Technische Kenntnisse der Klasse E" id="T" >
+    <chapter name="Allgemeine mathematische Grundkenntnisse und Größen" id="A" >
+      <chapter name="Allgemeine mathematische Grundkenntnisse" id="1" >
+        <question id="TA101" changed="2006-09-23" errorpoints="1" active="true">
+          <textquestion>0,042 A entspricht</textquestion>
+          <textanswer correct="true">42*10&lt;sup>-3&lt;/sup> A.</textanswer>
+	      <textanswer correct="false">42*10&lt;sup>3&lt;/sup> A.</textanswer>
+		  <textanswer correct="false">42*10&lt;sup>-2&lt;/sup> A.</textanswer>
+		  <textanswer correct="false">42*10&lt;sup>-1&lt;/sup> A.</textanswer>
+          <remark>geändert 2006-09-22, 2006-09-23 DF1IAV</remark>
+          <link>www.dj4uf.de/lehrg/a01/a01.html#Abg_Einheiten</link>
+        </question>
+      </chapter>
+    </chapter>
+  </chapter>
+
+</aqdf>
